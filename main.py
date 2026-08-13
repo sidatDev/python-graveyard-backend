@@ -17,6 +17,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://192.168.0.144:3000",
         "https://python-graveyard-frontend.vercel.app",
+        "https://python-graveyard-frontend-5ntajmkcw.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
