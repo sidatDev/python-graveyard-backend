@@ -1,7 +1,23 @@
-__pycache__/
+.venv
+__pycache__
 *.pyc
-.venv/
+*.pyo
+
 .env
-.git/
+.env.local
+.env.*.local
+
+.git
 .gitignore
-README.md
+
+.pytest_cache
+*.egg-info
+
+# One-time data import artifacts - not needed in the running app
+app/seed-data/data
+*.xlsx
+
+# Editor/OS cruft
+.vscode
+.idea
+.DS_Store
