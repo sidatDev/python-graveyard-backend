@@ -1,4 +1,3 @@
-# app\schemas\grave_schema.py
 import uuid
 from datetime import date, datetime
 from typing import Optional
@@ -34,6 +33,15 @@ class GraveRead(BaseModel):
         from_attributes = True
 
 
+class GravePaginatedRead(BaseModel):
+    """Paginated response for the public grave search endpoint."""
+    items: list[GraveRead]
+    total: int
+    page: int
+    page_size: int
+    total_pages: int
+
+
 class GraveWithInformerRead(BaseModel):
     id: uuid.UUID
     # Grave fields
@@ -45,6 +53,7 @@ class GraveWithInformerRead(BaseModel):
     zone_id: Optional[str]
     date_of_birth: Optional[date]
     date_of_death: Optional[date]
+    date_buried: Optional[date]
     identification_number: Optional[str]
     gender: Optional[str]
     native_place: Optional[str]
@@ -62,6 +71,15 @@ class GraveWithInformerRead(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class GraveWithInformerPaginatedRead(BaseModel):
+    """Paginated response for the admin grave+informer search endpoint."""
+    items: list[GraveWithInformerRead]
+    total: int
+    page: int
+    page_size: int
+    total_pages: int
 
 
 class GraveInformerDetailRead(BaseModel):

@@ -1,3 +1,4 @@
+# app\controllers\auth_controller.py
 from fastapi import HTTPException, Depends
 from sqlmodel import Session, select
 
